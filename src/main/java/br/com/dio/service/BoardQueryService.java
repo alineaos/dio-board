@@ -10,10 +10,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Optional;
 
-@AllArgsConstructor
 public class BoardQueryService {
 
     private final Connection connection;
+
+    public BoardQueryService(Connection connection) {
+        this.connection = connection;
+    }
 
     public Optional<BoardEntity> findById(final Long id) throws SQLException {
         var dao = new BoardDAO(connection);

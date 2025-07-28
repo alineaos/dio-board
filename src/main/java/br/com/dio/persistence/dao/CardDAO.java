@@ -7,22 +7,30 @@ import lombok.AllArgsConstructor;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.OffsetDateTime;
 import java.util.Optional;
 
 import static br.com.dio.persistence.converter.OffsetDateTimeConverter.toOffsetDateTime;
+import static java.time.ZoneOffset.UTC;
 import static java.util.Objects.nonNull;
 
-@AllArgsConstructor
+
 public class CardDAO {
 
-    private Connection connection;
+    private final Connection connection;
+
+    public CardDAO(Connection connection) {
+        this.connection = connection;
+    }
 
     public CardEntity insert(final CardEntity entity) throws SQLException {
-        var sql = "INSERT INTO CARDS (title, description, board_column_id) values (?, ?, ?);";
+        var sql = "INSERT INTO CARDS (title, description, added_at, board_column_id) values (?, ?, ?, ?);";
         try(var statement = connection.prepareStatement(sql)){
             var i = 1;
-            statement.setString(i ++, entity.getTitle());
-            statement.setString(i ++, entity.getDescription());
+            statement.setString(i++, entity.getTitle());
+            statement.setString(i++, entity.getDescription());
+            statement.setTimestamp(i++, Timestamp.valueOf(entity.getAddedAt().atZoneSimilarLocal(UTC).toLocalDateTime()));
             statement.setLong(i, entity.getBoardColumn().getId());
             statement.executeUpdate();
             if (statement instanceof StatementImpl impl){
@@ -33,13 +41,17 @@ public class CardDAO {
     }
 
     public void moveToColumn(final Long columnId, final Long cardId) throws SQLException{
-        var sql = "UPDATE CARDS SET board_column_id = ? WHERE id = ?;";
+        var sql = "UPDATE CARDS SET board_column_id = ?, moved_at = ? WHERE id = ?;";
         try(var statement = connection.prepareStatement(sql)){
             var i = 1;
-            statement.setLong(i ++, columnId);
+            statement.setLong(i++, columnId);
             statement.setLong(i, cardId);
             statement.executeUpdate();
         }
+    }
+
+    public void movedTime(final long cardId) throws SQLException{
+
     }
 
     public Optional<CardDetailsDTO> findById(final Long id) throws SQLException {
@@ -84,5 +96,6 @@ public class CardDAO {
         }
         return Optional.empty();
     }
+
 
 }

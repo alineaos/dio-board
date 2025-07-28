@@ -14,10 +14,16 @@ import java.sql.SQLException;
 
 import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
 
-@AllArgsConstructor
+
 public class MigrationStrategy {
 
-    private final Connection connection;
+    //private final Connection connection;
+
+    public MigrationStrategy() {
+
+    }
+    public MigrationStrategy(Connection connection) {
+    }
 
     public void executeMigration(){
         var originalOut = System.out;
