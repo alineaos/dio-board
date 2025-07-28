@@ -18,7 +18,11 @@ import static java.util.Objects.isNull;
 @RequiredArgsConstructor
 public class BoardColumnDAO {
 
-    private final Connection connection;
+    private Connection connection;
+
+    public BoardColumnDAO(Connection connection) {
+        this.connection = connection;
+    }
 
     public BoardColumnEntity insert(final BoardColumnEntity entity) throws SQLException {
         var sql = "INSERT INTO BOARDS_COLUMNS (name, `order`, kind, board_id) VALUES (?, ?, ?, ?);";

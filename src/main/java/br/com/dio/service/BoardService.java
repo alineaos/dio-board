@@ -8,10 +8,13 @@ import lombok.AllArgsConstructor;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@AllArgsConstructor
 public class BoardService {
 
     private final Connection connection;
+
+    public BoardService(Connection connection) {
+        this.connection = connection;
+    }
 
     public BoardEntity insert(final BoardEntity entity) throws SQLException {
         var dao = new BoardDAO(connection);

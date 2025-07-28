@@ -15,12 +15,15 @@ import java.util.Scanner;
 
 import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
 
-@AllArgsConstructor
 public class BoardMenu {
 
     private final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
     private final BoardEntity entity;
+
+    public BoardMenu(BoardEntity entity) {
+        this.entity = entity;
+    }
 
     public void execute() {
         try {

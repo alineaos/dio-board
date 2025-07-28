@@ -11,7 +11,6 @@ import java.util.function.Predicate;
 import static br.com.dio.persistence.entity.BoardColumnKindEnum.CANCEL;
 import static br.com.dio.persistence.entity.BoardColumnKindEnum.INITIAL;
 
-@Data
 public class BoardEntity {
 
     private Long id;
@@ -34,4 +33,27 @@ public class BoardEntity {
                 .findFirst().orElseThrow();
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<BoardColumnEntity> getBoardColumns() {
+        return boardColumns;
+    }
+
+    public void setBoardColumns(List<BoardColumnEntity> boardColumns) {
+        this.boardColumns = boardColumns;
+    }
 }

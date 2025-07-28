@@ -12,10 +12,14 @@ import java.util.Optional;
 import static br.com.dio.persistence.converter.OffsetDateTimeConverter.toOffsetDateTime;
 import static java.util.Objects.nonNull;
 
-@AllArgsConstructor
+
 public class CardDAO {
 
-    private Connection connection;
+    private final Connection connection;
+
+    public CardDAO(Connection connection) {
+        this.connection = connection;
+    }
 
     public CardEntity insert(final CardEntity entity) throws SQLException {
         var sql = "INSERT INTO CARDS (title, description, board_column_id) values (?, ?, ?);";

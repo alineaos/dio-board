@@ -8,10 +8,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Optional;
 
-@AllArgsConstructor
 public class BoardDAO {
 
     private Connection connection;
+
+    public BoardDAO() {
+
+    }
+
+    public BoardDAO(Connection connection) {
+        this.connection = connection;
+    }
 
     public BoardEntity insert(final BoardEntity entity) throws SQLException {
         var sql = "INSERT INTO BOARDS (name) values (?);";

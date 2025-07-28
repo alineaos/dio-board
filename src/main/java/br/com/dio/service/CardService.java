@@ -17,10 +17,13 @@ import static br.com.dio.persistence.entity.BoardColumnKindEnum.CANCEL;
 import static br.com.dio.persistence.entity.BoardColumnKindEnum.FINAL;
 
 
-@AllArgsConstructor
 public class CardService {
 
     private final Connection connection;
+
+    public CardService(Connection connection) {
+        this.connection = connection;
+    }
 
     public CardEntity create(final CardEntity entity) throws SQLException {
         try {
