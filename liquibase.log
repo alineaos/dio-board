@@ -1,17 +1,17 @@
-jul. 28, 2025 5:06:58 PM liquibase.changelog
+jul. 28, 2025 7:19:29 PM liquibase.changelog
 INFO: Reading resource: db/changelog/migrations/db.changelog-202408191938.sql
-jul. 28, 2025 5:06:58 PM liquibase.changelog
+jul. 28, 2025 7:19:29 PM liquibase.changelog
 INFO: Reading from board.databasechangelog
-jul. 28, 2025 5:06:58 PM liquibase.changelog
+jul. 28, 2025 7:19:29 PM liquibase.changelog
 INFO: Reading resource: db/changelog/migrations/db.changelog-202408210954.sql
-jul. 28, 2025 5:06:58 PM liquibase.changelog
+jul. 28, 2025 7:19:29 PM liquibase.changelog
 INFO: Reading resource: db/changelog/migrations/db.changelog-202408211004.sql
-jul. 28, 2025 5:06:58 PM liquibase.changelog
+jul. 28, 2025 7:19:29 PM liquibase.changelog
 INFO: Reading resource: db/changelog/migrations/db.changelog-202408211005.sql
-jul. 28, 2025 5:06:58 PM liquibase.changelog
+jul. 28, 2025 7:19:29 PM liquibase.changelog
 INFO: Reading resource: db/changelog/migrations/db.changelog-202408281807.sql
 Database is up to date, no changesets to execute
-jul. 28, 2025 5:06:58 PM liquibase.changelog
+jul. 28, 2025 7:19:30 PM liquibase.changelog
 INFO: Reading from board.databasechangelog
 
 UPDATE SUMMARY
@@ -21,19 +21,19 @@ Filtered out:                 0
 -------------------------------
 Total change sets:            5
 
-jul. 28, 2025 5:06:58 PM liquibase.util
+jul. 28, 2025 7:19:30 PM liquibase.util
 INFO: UPDATE SUMMARY
-jul. 28, 2025 5:06:58 PM liquibase.util
+jul. 28, 2025 7:19:30 PM liquibase.util
 INFO: Run:                          0
-jul. 28, 2025 5:06:58 PM liquibase.util
+jul. 28, 2025 7:19:30 PM liquibase.util
 INFO: Previously run:               5
-jul. 28, 2025 5:06:58 PM liquibase.util
+jul. 28, 2025 7:19:30 PM liquibase.util
 INFO: Filtered out:                 0
-jul. 28, 2025 5:06:58 PM liquibase.util
+jul. 28, 2025 7:19:30 PM liquibase.util
 INFO: -------------------------------
-jul. 28, 2025 5:06:58 PM liquibase.util
+jul. 28, 2025 7:19:30 PM liquibase.util
 INFO: Total change sets:            5
-jul. 28, 2025 5:06:58 PM liquibase.util
+jul. 28, 2025 7:19:30 PM liquibase.util
 INFO: Update summary generated
-jul. 28, 2025 5:06:58 PM liquibase.command
+jul. 28, 2025 7:19:30 PM liquibase.command
 INFO: Command execution complete

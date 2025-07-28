@@ -1,10 +1,14 @@
 package br.com.dio.persistence.entity;
 
+import java.time.OffsetDateTime;
+
 public class CardEntity {
 
     private Long id;
     private String title;
     private String description;
+    private OffsetDateTime addedAt;
+    private OffsetDateTime movedAt;
     private BoardColumnEntity boardColumn = new BoardColumnEntity();
 
     public Long getId() {
@@ -37,5 +41,21 @@ public class CardEntity {
 
     public void setBoardColumn(BoardColumnEntity boardColumn) {
         this.boardColumn = boardColumn;
+    }
+
+    public OffsetDateTime getAddedAt() {
+        return addedAt;
+    }
+
+    public void setAddedAt(OffsetDateTime addedAt) {
+        this.addedAt = addedAt;
+    }
+
+    public OffsetDateTime getMovedAt() {
+        return movedAt;
+    }
+
+    public void setMovedAt(OffsetDateTime movedAt) {
+        this.movedAt = movedAt;
     }
 }

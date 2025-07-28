@@ -11,6 +11,7 @@ import br.com.dio.service.CardService;
 import lombok.AllArgsConstructor;
 
 import java.sql.SQLException;
+import java.time.OffsetDateTime;
 import java.util.Scanner;
 
 import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
@@ -68,6 +69,7 @@ public class BoardMenu {
         System.out.println("Informe a descrição do card");
         card.setDescription(scanner.next());
         card.setBoardColumn(entity.getInitialColumn());
+        card.setAddedAt(OffsetDateTime.now());
         try(var connection = getConnection()){
             new CardService(connection).create(card);
         }
